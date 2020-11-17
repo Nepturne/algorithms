@@ -18,14 +18,14 @@ inicio
    quant_alunos            <- 0
    quant_notas             <- 0
    soma_notas              <- 0
-   quant_alun_acim_cinco <- 0
-   quant_alun_abai_cinco <- 0
+   quant_alun_acim_cinco   <- 0
+   quant_alun_abai_cinco   <- 0
    
 escreval("-> Informe o seu nome como aluno e sua nota:")
 escreval("---------------------------------------------------")
 
 enquanto (repeat_program <> 0) faca
-         escreva("Digite o seu nome como aluno do curso/instituiÁ„o:")
+         escreva("Digite o seu nome como aluno do curso/institui√ß√£o:")
          leia(nome_aluno)
          escreva("Digite a sua nota:")
          leia(nota_aluno)
@@ -37,9 +37,9 @@ enquanto (repeat_program <> 0) faca
             repeat_program <- 0
          fimse
          
-         // Soma das notas dos alunos para calculo das mÈdias
+         // Soma das notas dos alunos para calculo das m√©dias
          soma_notas <- soma_notas + nota_aluno
-         // MÈdia AritmÈtica: Soma das Notas / Quantidade de notas
+         // M√©dia Aritm√©tica: Soma das Notas / Quantidade de notas
          media_arit_notas <- soma_notas / quant_notas
          
          se nota_aluno >= 5 entao
@@ -57,13 +57,13 @@ fimenquanto
 
 se media_arit_notas <> 0 entao
 
-   escreval("- A media aritmÈtica das notas È: ",media_arit_notas:1:2)
+   escreval("- A media aritm√©tica das notas √©: ",media_arit_notas:1:2)
 
     se quant_alun_acim_cinco = 0 entao
-         escreval("N„o h· nenhum aluno com nota acima de 5")
-         escreval("E a quantidade de alunos com nota abaixo de 5 È: ",quant_alun_abai_cinco)
+         escreval("N√£o h√° nenhum aluno com nota acima de 5")
+         escreval("E a quantidade de alunos com nota abaixo de 5 √©: ",quant_alun_abai_cinco)
     senao
-         escreva("- A quantidade de alunos que est„o com nota acima de 5 È: ",quant_alun_acim_cinco)
+         escreva("- A quantidade de alunos que est√£o com nota acima de 5 √©: ",quant_alun_acim_cinco)
     fimse
     
 fimse
