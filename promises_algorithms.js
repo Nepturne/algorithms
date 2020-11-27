@@ -102,6 +102,9 @@ console.log("Fim");
 async function execEmail(mensagem){
   var id = await pegarId();
   var email = await buscarEmailNoBanco(id);
+  // Não colocamos await em enviarEmail pois e-mails podem demorar para serem enviados
+  // então para não bloquear nossa aplicação enquanto o e-mail é enviado então optamos
+  // por fazer com o then de forma totalmente asssíncrona não bloqueante:
   enviarEmail(mensagem,email).then((dadosenvio) =>{
     console.log(dadosenvio);
     console.log("Email enviado com sucesso para o id " + id);
