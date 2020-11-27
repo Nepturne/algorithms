@@ -91,6 +91,8 @@ pegarId().then((id) => {
     enviarEmail("Olá, como vai?",email).then((dadosenvio) => {
       console.log("-> Os dados foram enviados para: "+dadosenvio);
       console.log("Email enviado, para o usuário com o id "+id);
+    }).catch((err) =>{
+      console.log(err);
     });
   }).catch((err) => {
     console.log(err);
