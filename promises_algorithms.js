@@ -1,48 +1,48 @@
 // Promisse a solução para promisses aninhadas ou Promisse Hell:
-//function pegarUsuarios(){
-//  return new Promise( (resolve,reject) => {    
-//    setTimeout( () => {    
-//      resolve([
-//        {nome:"Lucas" , lang:"JS"},
-//        {nome: "Victor" , lang:"C#"},
-//        {nome: "Daniel" , lang:"Java"}
-//      ]);
-//    },3000);
-//  });
-//}
+function pegarUsuarios(){
+  return new Promise( (resolve,reject) => {    
+    setTimeout( () => {    
+      resolve([
+        {nome:"Lucas" , lang:"JS"},
+        {nome: "Victor" , lang:"C#"},
+        {nome: "Daniel" , lang:"Java"}
+      ]);
+    },3000);
+  });
+}
 
 // Não funciona Promise { <pending> }
-// var usuarios = pegarUsuarios();
-// console.log(usuarios);
+ var usuarios = pegarUsuarios();
+ console.log(usuarios);
 
 // Funciona porém traz o problema de aninhamento encadeado de promise ou 
 // promisse hell:
-// pegarUsuarios().then( usuarios => {
-//  var users = usuarios;
-//  console.log(users);
- //});
+ pegarUsuarios().then( usuarios => {
+  var users = usuarios;
+  console.log(users);
+});
 
 // O await bloqueia o fluxo do código ou seja só executa o console de baixo quando o 
 // o resultado da função pegarUsuarios() seja retornado e exibido na var usuarios
 // porém resolve o problema de promisse hell, contudo com o pró de bloquear fluxo 
 // de códigos:
-//async function pedido_one(){
-//  var usuarios = await pegarUsuarios();
-//  console.log(usuarios);
-//  console.log("Testando se o await, bloqueia o fluxo do code ou não.");
-// }
+async function pedido_one(){
+  var usuarios = await pegarUsuarios();
+  console.log(usuarios);
+  console.log("Testando se o await, bloqueia o fluxo do code ou não.");
+ }
 
-// pedido_one();
+ pedido_one();
 
 // Dessa forma não bloqueia o fluxo do código pois está totalmente assíncrono:
-//async function pedi_two(){
-//  pegarUsuarios().then( usuarios => {
-//    var users = usuarios;
-//    console.log(users);
-//  });
-//  console.log("Testando se assim, bloqueia o fluxo do code ou não.");
-//}
-//pedido_two();
+async function pedi_two(){
+  pegarUsuarios().then( usuarios => {
+    var users = usuarios;
+    console.log(users);
+  });
+  console.log("Testando se assim, bloqueia o fluxo do code ou não.");
+}
+pedido_two();
 
 //-----------------------------------------------------------------------------
 
